@@ -1,0 +1,28 @@
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        GroceryList groceryList= new GroceryList();
+        Scanner choice=new Scanner(System.in);
+        System.out.println("Enter your choice:- :\n 1. To add Grocery :\n 2. To print all items in cart.");
+        int Choice=choice.nextInt();
+        switch (Choice){
+
+            case 1 :
+                Scanner size=new Scanner(System.in);
+                System.out.println("How many items do you want to add? ");
+                int Size=size.nextInt();
+                Scanner Item= new Scanner(System.in);
+                System.out.println("Could you please enter the item you need to add to your list");
+                for (int i = 0; i < Size; i++) {
+                    String item=Item.nextLine();
+                    GroceryList.addgroceryList(item);
+                }
+
+                //break;
+            case 2 :
+                GroceryList.printGroceryList();
+                break;
+        }
+    }
+}
